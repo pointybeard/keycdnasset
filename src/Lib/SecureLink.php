@@ -23,7 +23,7 @@ final class SecureLink extends Link
     {
         try {
             //Ensure the path has a leading / otherwise KeyCDN will complain
-            $path = '/' . trim($this->path, '/');
+            $path = '/' . trim((string)$this->path, '/');
             $expiry = (time() + $this->expiry);
 
             // Glue the path, token and expiry together and MD5 hash the result.
@@ -42,7 +42,7 @@ final class SecureLink extends Link
 
             return sprintf(
                 '%s%s?token=%s&expire=%s',
-                (string)$this->zone->value->url,
+                (string)$this->zone->url,
                 $path,
                 $token,
                 $expiry
