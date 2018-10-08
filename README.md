@@ -29,8 +29,8 @@ $zone = new Lib\Zone(
 );
 
 $credentials = new Lib\Credentials(
-    "myusername",
-    "mysecurtokenkey"
+    "my-username",
+    "my-secure-token-key"
 )
 
 $asset = new Lib\Asset(
@@ -55,7 +55,7 @@ try{
 
     $asset = Lib\Asset::push(
         $credentials,
-        "/path/to/asset/on/this/zone/file.zip",
+        "file.zip",
         $zone,
         NULL, //Specify a different KeyCDN Host value here
         $result
