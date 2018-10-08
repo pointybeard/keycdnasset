@@ -1,0 +1,29 @@
+{
+    "name": "pointybeard/keycdnasset",
+    "type": "library",
+    "description": "Library for pushing assets to KeyCDN, generating links, and checking availablity.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alannah Kearney",
+            "email": "hi@alannahkearney.com",
+            "homepage": "http://alannahkearney.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.6",
+        "pointybeard/property-bag": "^1.0",
+        "pointybeard/uriinfo": "dev-master",
+    },
+    "support": {
+      "issues": "https://github.com/pointybeard/keycdnasset/issues",
+      "wiki": "https://github.com/pointybeard/keycdnasset/wiki"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "pointybeard\\KeyCDNAsset\\": "src/"
+        }
+    }
+}
