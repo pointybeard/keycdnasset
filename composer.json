@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.6.6",
         "pointybeard/property-bag": "^1.0",
-        "pointybeard/uriinfo": "dev-master",
+        "pointybeard/uriinfo": "~1.0"
     },
     "support": {
       "issues": "https://github.com/pointybeard/keycdnasset/issues",
