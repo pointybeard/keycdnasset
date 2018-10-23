@@ -57,14 +57,14 @@ class Asset
     public function link($expiry=SecureLink::DEFAULT_LINKEXPIRYTIME)
     {
         if ($this->zone->isSecure() === true) {
-            $link = new KeyCDNAssetLinkSecure(
+            $link = new SecureLink(
                 $this->credentials,
                 $this->zone,
                 $path,
                 $expiry
             );
         } else {
-            $link = new KeyCDNAssetLink(
+            $link = new Link(
                 (string)$this->credentials->zone->value->url,
                 $path
             );
@@ -87,7 +87,7 @@ class Asset
         // Error will look like this:
         // rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1183)
         if (preg_match("@rsync error:([^\r\n]+)@i", $result, $match)) {
-            throw new Exceptions\KeyCDNFailedToSyncException(trim($match[1]));
+            throw new Exceptions\FailedToSyncException(trim($match[1]));
         }
 
         return new self($credentials, $path, $zone);
