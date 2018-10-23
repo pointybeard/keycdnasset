@@ -59,14 +59,14 @@ class Asset
         if ($this->zone->isSecure() === true) {
             $link = new SecureLink(
                 $this->credentials,
+                $this->path,
                 $this->zone,
-                $path,
                 $expiry
             );
         } else {
             $link = new Link(
                 (string)$this->credentials->zone->value->url,
-                $path
+                $this->path
             );
         }
 
